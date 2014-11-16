@@ -3,7 +3,7 @@ class VideosController < ApplicationController
 		@videoUp = Video.new
 	end
 	def create
-		@videoUp = Video.new(video_params)
+		@videoUp = Video.new(videos_params)
 		tmp_str = @videoUp.link.split('/')
 		@videoUp.link = tmp_str[3].to_s
 		if @videoUp.save
@@ -17,7 +17,7 @@ class VideosController < ApplicationController
 		@videoAll = Video.order_by(:created_at => "desc")
 	end
 	
-	def video_params
+	def videos_params
 		params.require(:video).permit(:link, :email)
 	end
 end

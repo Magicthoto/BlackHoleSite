@@ -1,7 +1,9 @@
-<%= link_to "Add Video", video_new_path %>
+<%= link_to "Add Video", videos_new_path %>
 
-<% @videoAll.each do |v| %>
-	<% if v.visible %>
-		<iframe width="560" height="315" src="//www.youtube.com/embed/<%= v.link %>" frameborder="0" allowfullscreen></iframe>	
+<% if @videoAll != nil%>
+	<% @videoAll.each do |v| %>
+		<% if v.visible %>
+			<iframe width="560" height="315" src="//www.youtube.com/embed/<%= v.link %>" frameborder="0" allowfullscreen></iframe>	
+		<% end %>
 	<% end %>
-<% end %>
+<%end%>

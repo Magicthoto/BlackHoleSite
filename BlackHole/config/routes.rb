@@ -32,9 +32,9 @@ Rails.application.routes.draw do
   get 'home/team', :path => "Team"
   get 'home/about', :path => "About"
 
-  get 'video/index', :to => "videos#index", :path => "Media"
-  get 'video/create', :to => "videos#create"
-  get 'video/new', :to => "videos#new", :path => "UploadYourVideo"
+  get 'videos/index', :to => "videos#index", :path => "Media"
+  get 'videos/create', :to => "videos#create"
+  get 'videos/new', :to => "videos#new", :path => "UploadYourVideo"
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
