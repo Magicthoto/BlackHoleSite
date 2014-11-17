@@ -17,10 +17,13 @@
 
 body {
   color: white;
-  background-color: black;
-  background-image: url(images/background.jpg);
+  background: url(images/intro.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-a {
+a, h1,h2,h3,h4 {
   color: white;
 }

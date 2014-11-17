@@ -1,28 +1,22 @@
-<!--     <div id="MyHeader" class="container-fluid">
-	    <section id="header" class="content-section text-center">
-		    <div class="col-md-8 col-md-offset-2">
-		        <h1 class="brand-heading">BlackHole </h1>
-		        <p class="intro-text">Grosse push line de la muerte</p>
-		        </br>
-	        </div>
-	</div> -->
-	<!--            <a href="#about" class="down-page btn btn-default page-scroll">
-	                <i class="fa fa-angle-double-down animated"></i>
-	            </a>-->
-	</section>
-    <!-- About Section -->
+
     <div id="MyAbout" class="container-fluid">
         <section id="about" class="content-section text-center">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>BlackHole</h2>
-                <p>Black Hole est un moba à la troisième personne. Le joueur contrôle un extraterrestre et rejoint une bataille contre neuf autres joueur en mode arena. Chaque joueur sera armé de trois sorts et un ultime.<a href="http://gratisography.com/">link</a></p>
+                <h4>Black Hole est un moba à la troisième personne. Le joueur contrôle un extraterrestre et rejoint une bataille contre neuf autres joueur en mode arena. Chaque joueur sera armé de trois sorts et un ultime.<a href="http://gratisography.com/">link</a></h4>
             </div>
     </div>
     <div id="MyVideo" class="container-fluid">
         <section id="video" class="content-section text-center">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Video</h2>
-                <p>Tu peux venir revoir tous les moments Epics :D</p>
+                <h2>Video // <%= link_to "Add Video", videos_new_path %></h2>
+                <% if @videoAll != nil%>
+                    <% @videoAll.each do |v| %>
+                        <% if v.visible %>
+                            <iframe width="290" height="180" src="//www.youtube.com/embed/<%= v.link %>" frameborder="0" allowfullscreen></iframe>  
+                        <% end %>
+                    <% end %>
+                <%end%>
             </div>
     </div>
 	<!--        <a href="#download" class="btn btn-circle page-scroll">
@@ -30,43 +24,52 @@
     </a>-->
     </section>
     <!-- Download Section -->
-    <section id="MyDownload" class="container-fluid content-section text-center">
-	    <div class="col-lg-8 col-lg-offset-2">
-	        <h2>Download BlackHole</h2>
-	        <p>You can download BlackHole for free.</p>
-	        <a href="#" class="btn btn-default btn-lg">Visit Download Page</a>
-	    </div>
-<!--        <a href="#contact" class="btn btn-circle page-scroll">
-            <i class="fa fa-angle-double-down animated"></i>
-        </a>-->
-    </section>
+    <div id="MyDownload">
+        <section id="download" class="container-fluid content-section text-center">
+    	    <div class="col-lg-8 col-lg-offset-2">
+    	        <h2>Download BlackHole</h2>
+    	        <p>You can download BlackHole for free.</p>
+    	        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-download fa-fw"></i>Visit Download Page</a>
+    	    </div>
+    <!--        <a href="#contact" class="btn btn-circle page-scroll">
+                <i class="fa fa-angle-double-down animated"></i>
+            </a>-->
+        </section>
+    </div>
     <!-- Contact Section -->
-    <section id="MyContact" class="container-fluid content-section text-center">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Staff</h2>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="/messages/new" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Mail</span></a>
-                    </li>
-                </ul>
-            </div>
-    </section>
+    <div id="MyContact">
+        <section id="contact" class="container-fluid content-section text-center">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Contact Staff</h2>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="/messages/new" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Mail</span></a>
+                        </li>
+                    </ul>
+                </div>
+        </section>
+    </div>
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        var target = this.hash;
+        $target = $(target);
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 2000, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
+    $('#MyAbout').css("heigth", $(window).height());
+    $('#MyVideo').css("heigth", $(window).height());
+    $('#MyContact').css("heigth", $(window).height());
+    $('#MyDownload').css("heigth", $(window).height());
+});
+</script>

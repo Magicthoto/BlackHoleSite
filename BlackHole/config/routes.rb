@@ -25,12 +25,12 @@ Rails.application.routes.draw do
   get 'users/show', :to => 'users#show', :path => "Show My Profil"
   get 'users/index', :path => "Index"
 
-  get 'home/help', :path => "Help"
-  get 'home/conditions', :path => "Conditions_of_use"
-  get 'home/legals', :path => "Legals"
+  #get 'home/help', :path => "Help"
+  #get 'home/conditions', :path => "Conditions_of_use"
+  #get 'home/legals', :path => "Legals"
   get 'home/contact', :to => "messages#new", :path => "ContactUs"
-  get 'home/team', :path => "Team"
-  get 'home/about', :path => "About"
+  #get 'home/team', :path => "Team"
+  #get 'home/about', :path => "About"
 
   get 'videos/index', :to => "videos#index", :path => "Media"
   get 'videos/create', :to => "videos#create"
