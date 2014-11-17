@@ -60,8 +60,12 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
+    font-awesome-less (4.0.2)
+      less-rails (>= 2.4.2)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.2.2)
+      sass (~> 3.2)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -177,6 +181,8 @@ PLATFORMS
 
 DEPENDENCIES
   devise
+  font-awesome-less
+  font-awesome-sass
   jquery-rails
   less-rails
   mongoid!

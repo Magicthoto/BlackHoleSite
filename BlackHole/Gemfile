@@ -19,6 +19,9 @@ gem 'sass-rails', '~> 4.0.3'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
  gem 'therubyracer',  platforms: :ruby
 
+gem 'font-awesome-less'
+gem 'font-awesome-sass'
+
 #to use LESS
 gem "less-rails"
 # Use jquery as the JavaScript library

@@ -11,33 +11,14 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
-
-#MyHeader {
-  background-color: black;
-  height: 100%;
-}
-
-#MyAbout {
-  background-color: red;
-}
-
-#MyDownload {
-  background-color: blue;
-}
-
-#MyContact {
-  background-color: grey;
-}
-
-#MyVideo {
-  background-color: green;
-}
 
 body {
   color: white;
   background-color: black;
+  background-image: url(images/background.jpg);
 }
 
 a {
