@@ -1,0 +1,39 @@
+<div class="container">
+<% provide(:title, 'Sign up') %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Create Your Account</h1>
+      <%= form_for @user, html: { class: "form-horizontal", role: "form" } do |f| %>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <%= f.email_field("email", :placeholder => "Enter Your Email", class:"form-control", id:"inputEmail3") %>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Login</label>
+            <div class="col-sm-10">
+              <%= f.text_field("login", :placeholder => "Enter Your Login", class:"form-control", id:"inputEmail3") %>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <%= f.password_field("encrypted_password", :placeholder => "Enter Your Password", class:"form-control", id:"inputEmail3") %>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Password Confirmation</label>
+            <div class="col-sm-10">
+              <%= f.password_field("password_confirmation", :placeholder => "Confirm Your Password", class:"form-control", id:"inputEmail3") %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= submit_tag("Create Your Account", class:"btn btn-large btn-primary") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

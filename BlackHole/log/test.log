@@ -1,8 +1,0 @@
-----------------------------------------
-UsersControllerTest: test_should_get_new
-----------------------------------------
-Processing by UsersController#new as HTML
-  Rendered users/new.html.erb within layouts/application (1.5ms)
-  Rendered layouts/_header.html.erb (2.9ms)
-  Rendered layouts/_footer.html.erb (0.5ms)
-Completed 200 OK in 457ms (Views: 456.4ms)
